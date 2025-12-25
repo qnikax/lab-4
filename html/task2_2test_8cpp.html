@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Шифрование: Гронсфельд и табличная перестановка: Файл lab-3/task2/test.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Шифрование: Гронсфельд и табличная перестановка<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f59021ff01edb8c04b66f15588cc2dff.html">lab-3</a></li><li class="navelem"><a class="el" href="dir_6201f0ec32ba4e557309c3a5fca5a3d8.html">task2</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл test.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="routeCipher_8h_source.html">routeCipher.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для test.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="task2_2test_8cpp__incl.png" border="0" usemap="#alab-3_2task2_2test_8cpp" alt=""/></div>
+<map name="alab-3_2task2_2test_8cpp" id="alab-3_2task2_2test_8cpp">
+<area shape="rect" title=" " alt="" coords="73,5,223,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,85,107"/>
+<area shape="rect" title=" " alt="" coords="79,155,140,181"/>
+<area shape="rect" title=" " alt="" coords="164,155,223,181"/>
+<area shape="rect" href="routeCipher_8h.html" title="Заголовочный файл для модуля маршрутного шифрования" alt="" coords="211,80,320,107"/>
+<area shape="rect" title=" " alt="" coords="247,155,310,181"/>
+<area shape="rect" title=" " alt="" coords="334,155,421,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a824cc94299e1f3f8db70865cbb9c3a32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a824cc94299e1f3f8db70865cbb9c3a32">assert_true</a> (bool condition, const string &amp;message)</td></tr>
+<tr class="separator:a824cc94299e1f3f8db70865cbb9c3a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ea3024e0e6491981be22fe27ee1e39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#ab1ea3024e0e6491981be22fe27ee1e39">assert_exception</a> (void(*func)(), const string &amp;message)</td></tr>
+<tr class="separator:ab1ea3024e0e6491981be22fe27ee1e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52cccc5fce208a7a634fa92e6e4a7a7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a52cccc5fce208a7a634fa92e6e4a7a7c">print_section</a> (const string &amp;section_name)</td></tr>
+<tr class="separator:a52cccc5fce208a7a634fa92e6e4a7a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba75a8bdc084005b14d0ab6214dc244"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244">test_constructor</a> ()</td></tr>
+<tr class="separator:acba75a8bdc084005b14d0ab6214dc244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a82b8022ae0255aad75a2cae0eff0fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a3a82b8022ae0255aad75a2cae0eff0fd">test_encrypt</a> ()</td></tr>
+<tr class="separator:a3a82b8022ae0255aad75a2cae0eff0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d936724949e53d9631c1b6dcae0444d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a3d936724949e53d9631c1b6dcae0444d">test_decrypt</a> ()</td></tr>
+<tr class="separator:a3d936724949e53d9631c1b6dcae0444d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978dc43a8c18168cbdc0d2513670d96a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a978dc43a8c18168cbdc0d2513670d96a">test_edge_cases</a> ()</td></tr>
+<tr class="separator:a978dc43a8c18168cbdc0d2513670d96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7a0173329d81860a7bbabef04f38ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a9d7a0173329d81860a7bbabef04f38ec">test_integration</a> ()</td></tr>
+<tr class="separator:a9d7a0173329d81860a7bbabef04f38ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:ab7324491948254cde8946b74d8bca3bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#ab7324491948254cde8946b74d8bca3bc">total_tests</a> = 0</td></tr>
+<tr class="separator:ab7324491948254cde8946b74d8bca3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c2b99b66f63ee9064347f9151e99ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task2_2test_8cpp.html#a51c2b99b66f63ee9064347f9151e99ba">passed_tests</a> = 0</td></tr>
+<tr class="separator:a51c2b99b66f63ee9064347f9151e99ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="ab1ea3024e0e6491981be22fe27ee1e39" name="ab1ea3024e0e6491981be22fe27ee1e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ea3024e0e6491981be22fe27ee1e39">&#9670;&nbsp;</a></span>assert_exception()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void assert_exception </td>
+          <td>(</td>
+          <td class="paramtype">void(*)()&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a824cc94299e1f3f8db70865cbb9c3a32" name="a824cc94299e1f3f8db70865cbb9c3a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824cc94299e1f3f8db70865cbb9c3a32">&#9670;&nbsp;</a></span>assert_true()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void assert_true </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52cccc5fce208a7a634fa92e6e4a7a7c" name="a52cccc5fce208a7a634fa92e6e4a7a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52cccc5fce208a7a634fa92e6e4a7a7c">&#9670;&nbsp;</a></span>print_section()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_section </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>section_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acba75a8bdc084005b14d0ab6214dc244" name="acba75a8bdc084005b14d0ab6214dc244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba75a8bdc084005b14d0ab6214dc244">&#9670;&nbsp;</a></span>test_constructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_constructor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d936724949e53d9631c1b6dcae0444d" name="a3d936724949e53d9631c1b6dcae0444d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d936724949e53d9631c1b6dcae0444d">&#9670;&nbsp;</a></span>test_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_decrypt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a978dc43a8c18168cbdc0d2513670d96a" name="a978dc43a8c18168cbdc0d2513670d96a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978dc43a8c18168cbdc0d2513670d96a">&#9670;&nbsp;</a></span>test_edge_cases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_edge_cases </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a82b8022ae0255aad75a2cae0eff0fd" name="a3a82b8022ae0255aad75a2cae0eff0fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a82b8022ae0255aad75a2cae0eff0fd">&#9670;&nbsp;</a></span>test_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_encrypt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d7a0173329d81860a7bbabef04f38ec" name="a9d7a0173329d81860a7bbabef04f38ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7a0173329d81860a7bbabef04f38ec">&#9670;&nbsp;</a></span>test_integration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_integration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a51c2b99b66f63ee9064347f9151e99ba" name="a51c2b99b66f63ee9064347f9151e99ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c2b99b66f63ee9064347f9151e99ba">&#9670;&nbsp;</a></span>passed_tests</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int passed_tests = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7324491948254cde8946b74d8bca3bc" name="ab7324491948254cde8946b74d8bca3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7324491948254cde8946b74d8bca3bc">&#9670;&nbsp;</a></span>total_tests</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int total_tests = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

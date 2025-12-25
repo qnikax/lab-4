@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Шифрование: Гронсфельд и табличная перестановка: Класс routeCipher</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Шифрование: Гронсфельд и табличная перестановка<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classrouteCipher-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс routeCipher</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для маршрутного (табличного) шифрования  
+ <a href="classrouteCipher.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="modAlphaCipher_8h_source.html">modAlphaCipher.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac0d686aa3a9f9ca950809b79741e7d2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#ac0d686aa3a9f9ca950809b79741e7d2b">routeCipher</a> ()=delete</td></tr>
+<tr class="separator:ac0d686aa3a9f9ca950809b79741e7d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f810f10c694deac13302d59a5d788d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#aa3f810f10c694deac13302d59a5d788d">routeCipher</a> (int cols)</td></tr>
+<tr class="memdesc:aa3f810f10c694deac13302d59a5d788d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="classrouteCipher.html" title="Класс для маршрутного (табличного) шифрования">routeCipher</a>.  <a href="classrouteCipher.html#aa3f810f10c694deac13302d59a5d788d">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa3f810f10c694deac13302d59a5d788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cbe7ebd81a6e2cd23a5bf7f432d6592"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a2cbe7ebd81a6e2cd23a5bf7f432d6592">encrypt</a> (const std::wstring &amp;text)</td></tr>
+<tr class="separator:a2cbe7ebd81a6e2cd23a5bf7f432d6592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a783275fd59cac6bf4904568111778a"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a3a783275fd59cac6bf4904568111778a">decrypt</a> (const std::wstring &amp;text)</td></tr>
+<tr class="separator:a3a783275fd59cac6bf4904568111778a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d686aa3a9f9ca950809b79741e7d2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#ac0d686aa3a9f9ca950809b79741e7d2b">routeCipher</a> ()=delete</td></tr>
+<tr class="memdesc:ac0d686aa3a9f9ca950809b79741e7d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаленный конструктор по умолчанию  <a href="classrouteCipher.html#ac0d686aa3a9f9ca950809b79741e7d2b">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac0d686aa3a9f9ca950809b79741e7d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f810f10c694deac13302d59a5d788d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#aa3f810f10c694deac13302d59a5d788d">routeCipher</a> (int cols)</td></tr>
+<tr class="memdesc:aa3f810f10c694deac13302d59a5d788d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с установкой количества столбцов  <a href="classrouteCipher.html#aa3f810f10c694deac13302d59a5d788d">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa3f810f10c694deac13302d59a5d788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cbe7ebd81a6e2cd23a5bf7f432d6592"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a2cbe7ebd81a6e2cd23a5bf7f432d6592">encrypt</a> (const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:a2cbe7ebd81a6e2cd23a5bf7f432d6592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шифрование текста  <a href="classrouteCipher.html#a2cbe7ebd81a6e2cd23a5bf7f432d6592">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2cbe7ebd81a6e2cd23a5bf7f432d6592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a783275fd59cac6bf4904568111778a"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a3a783275fd59cac6bf4904568111778a">decrypt</a> (const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:a3a783275fd59cac6bf4904568111778a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расшифрование текста  <a href="classrouteCipher.html#a3a783275fd59cac6bf4904568111778a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3a783275fd59cac6bf4904568111778a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a2effacca00f88e821b89c1a3c904aa71"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a2effacca00f88e821b89c1a3c904aa71">prepareText</a> (const std::wstring &amp;text)</td></tr>
+<tr class="separator:a2effacca00f88e821b89c1a3c904aa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3844986b300f348310733db4c28b70ee"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; wchar_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a3844986b300f348310733db4c28b70ee">createTable</a> (const std::wstring &amp;text, int cols)</td></tr>
+<tr class="separator:a3844986b300f348310733db4c28b70ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0faf22e466cb4e3efcaa3d54cc0281f"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#ac0faf22e466cb4e3efcaa3d54cc0281f">readEncrypted</a> (const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;table, int cols)</td></tr>
+<tr class="separator:ac0faf22e466cb4e3efcaa3d54cc0281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20d3390422d4b129ab563e0032e80b82"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a20d3390422d4b129ab563e0032e80b82">readDecrypted</a> (const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;table, int cols)</td></tr>
+<tr class="separator:a20d3390422d4b129ab563e0032e80b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e4bad1a4be455654e18f02726734b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a93e4bad1a4be455654e18f02726734b7">validateColumns</a> (int cols)</td></tr>
+<tr class="memdesc:a93e4bad1a4be455654e18f02726734b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидация количества столбцов  <a href="classrouteCipher.html#a93e4bad1a4be455654e18f02726734b7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a93e4bad1a4be455654e18f02726734b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa954b567d7cafbce24372f6ee97f2686"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#aa954b567d7cafbce24372f6ee97f2686">getValidOpenText</a> (const std::wstring &amp;s)</td></tr>
+<tr class="separator:aa954b567d7cafbce24372f6ee97f2686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a9615b88620de102ba9df4ac070139"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a46a9615b88620de102ba9df4ac070139">getValidCipherText</a> (const std::wstring &amp;s)</td></tr>
+<tr class="separator:a46a9615b88620de102ba9df4ac070139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2effacca00f88e821b89c1a3c904aa71"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a2effacca00f88e821b89c1a3c904aa71">prepareText</a> (const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:a2effacca00f88e821b89c1a3c904aa71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подготовка текста к обработке  <a href="classrouteCipher.html#a2effacca00f88e821b89c1a3c904aa71">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2effacca00f88e821b89c1a3c904aa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3844986b300f348310733db4c28b70ee"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; wchar_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a3844986b300f348310733db4c28b70ee">createTable</a> (const std::wstring &amp;text, int cols)</td></tr>
+<tr class="memdesc:a3844986b300f348310733db4c28b70ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание таблицы для шифрования  <a href="classrouteCipher.html#a3844986b300f348310733db4c28b70ee">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3844986b300f348310733db4c28b70ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0faf22e466cb4e3efcaa3d54cc0281f"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#ac0faf22e466cb4e3efcaa3d54cc0281f">readEncrypted</a> (const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;table, int cols)</td></tr>
+<tr class="memdesc:ac0faf22e466cb4e3efcaa3d54cc0281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение таблицы в режиме шифрования  <a href="classrouteCipher.html#ac0faf22e466cb4e3efcaa3d54cc0281f">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac0faf22e466cb4e3efcaa3d54cc0281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20d3390422d4b129ab563e0032e80b82"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a20d3390422d4b129ab563e0032e80b82">readDecrypted</a> (const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;table, int cols)</td></tr>
+<tr class="memdesc:a20d3390422d4b129ab563e0032e80b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение таблицы в режиме расшифрования  <a href="classrouteCipher.html#a20d3390422d4b129ab563e0032e80b82">Подробнее...</a><br /></td></tr>
+<tr class="separator:a20d3390422d4b129ab563e0032e80b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e4bad1a4be455654e18f02726734b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a93e4bad1a4be455654e18f02726734b7">validateColumns</a> (int cols)</td></tr>
+<tr class="memdesc:a93e4bad1a4be455654e18f02726734b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидация количества столбцов  <a href="classrouteCipher.html#a93e4bad1a4be455654e18f02726734b7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a93e4bad1a4be455654e18f02726734b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa954b567d7cafbce24372f6ee97f2686"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#aa954b567d7cafbce24372f6ee97f2686">getValidOpenText</a> (const std::wstring &amp;s)</td></tr>
+<tr class="memdesc:aa954b567d7cafbce24372f6ee97f2686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидация открытого текста  <a href="classrouteCipher.html#aa954b567d7cafbce24372f6ee97f2686">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa954b567d7cafbce24372f6ee97f2686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a9615b88620de102ba9df4ac070139"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#a46a9615b88620de102ba9df4ac070139">getValidCipherText</a> (const std::wstring &amp;s)</td></tr>
+<tr class="memdesc:a46a9615b88620de102ba9df4ac070139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидация зашифрованного текста  <a href="classrouteCipher.html#a46a9615b88620de102ba9df4ac070139">Подробнее...</a><br /></td></tr>
+<tr class="separator:a46a9615b88620de102ba9df4ac070139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ad89026145f29bbc8458bb64c5c46181d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrouteCipher.html#ad89026145f29bbc8458bb64c5c46181d">columns</a></td></tr>
+<tr class="memdesc:ad89026145f29bbc8458bb64c5c46181d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество столбцов в таблице  <a href="classrouteCipher.html#ad89026145f29bbc8458bb64c5c46181d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad89026145f29bbc8458bb64c5c46181d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Класс для маршрутного (табличного) шифрования </p>
+<p >Реализует алгоритм маршрутного шифрования, который заключается в заполнении таблицы текстом по строкам и чтении его по столбцам в определенном порядке.</p>
+<dl class="section user"><dt>Принцип работы:</dt><dd><ol type="1">
+<li>Текст записывается в таблицу построчно</li>
+<li>Пустые ячейки заполняются пробелами</li>
+<li>Для шифрования: чтение таблицы по столбцам снизу вверх справа налево</li>
+<li>Для расшифрования: заполнение таблицы по столбцам и чтение построчно</li>
+</ol>
+</dd></dl>
+<dl class="section user"><dt>Пример шифрования:</dt><dd><div class="fragment"><div class="line">Текст: <span class="stringliteral">&quot;ПРИВЕТМИР&quot;</span>, Колонки: 3</div>
+<div class="line">Таблица:</div>
+<div class="line">| П | Р | И |</div>
+<div class="line">| В | Е | Т |</div>
+<div class="line">| М | И | Р |</div>
+<div class="line"> </div>
+<div class="line">Чтение для шифрования (по столбцам справа налево снизу вверх):</div>
+<div class="line">Столбец 3: Р, Т, Р → <span class="stringliteral">&quot;РТР&quot;</span></div>
+<div class="line">Столбец 2: И, Е, И → <span class="stringliteral">&quot;ИЕИ&quot;</span></div>
+<div class="line">Столбец 1: П, В, М → <span class="stringliteral">&quot;ПВМ&quot;</span></div>
+<div class="line"> </div>
+<div class="line">Результат: <span class="stringliteral">&quot;РТРИЕИПВМ&quot;</span></div>
+</div><!-- fragment --></dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Алгоритм не является криптостойким и предназначен для учебных целей </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ac0d686aa3a9f9ca950809b79741e7d2b" name="ac0d686aa3a9f9ca950809b79741e7d2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0d686aa3a9f9ca950809b79741e7d2b">&#9670;&nbsp;</a></span>routeCipher() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">routeCipher::routeCipher </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3f810f10c694deac13302d59a5d788d" name="aa3f810f10c694deac13302d59a5d788d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f810f10c694deac13302d59a5d788d">&#9670;&nbsp;</a></span>routeCipher() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">routeCipher::routeCipher </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор класса <a class="el" href="classrouteCipher.html" title="Класс для маршрутного (табличного) шифрования">routeCipher</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов в таблице </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом количестве столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac0d686aa3a9f9ca950809b79741e7d2b" name="ac0d686aa3a9f9ca950809b79741e7d2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0d686aa3a9f9ca950809b79741e7d2b">&#9670;&nbsp;</a></span>routeCipher() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">routeCipher::routeCipher </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удаленный конструктор по умолчанию </p>
+
+</div>
+</div>
+<a id="aa3f810f10c694deac13302d59a5d788d" name="aa3f810f10c694deac13302d59a5d788d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f810f10c694deac13302d59a5d788d">&#9670;&nbsp;</a></span>routeCipher() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">routeCipher::routeCipher </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор с установкой количества столбцов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов для таблицы </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом количестве столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a3844986b300f348310733db4c28b70ee" name="a3844986b300f348310733db4c28b70ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3844986b300f348310733db4c28b70ee">&#9670;&nbsp;</a></span>createTable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; wchar_t &gt; &gt; routeCipher::createTable </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3844986b300f348310733db4c28b70ee" name="a3844986b300f348310733db4c28b70ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3844986b300f348310733db4c28b70ee">&#9670;&nbsp;</a></span>createTable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; wchar_t &gt; &gt; routeCipher::createTable </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создание таблицы для шифрования </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Текст для размещения в таблице </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Двумерный вектор символов (таблица) </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Пустые ячейки заполняются пробелами </dd></dl>
+
+</div>
+</div>
+<a id="a3a783275fd59cac6bf4904568111778a" name="a3a783275fd59cac6bf4904568111778a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a783275fd59cac6bf4904568111778a">&#9670;&nbsp;</a></span>decrypt() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::decrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a783275fd59cac6bf4904568111778a" name="a3a783275fd59cac6bf4904568111778a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a783275fd59cac6bf4904568111778a">&#9670;&nbsp;</a></span>decrypt() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::decrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Расшифрование текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Зашифрованный текст </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Расшифрованный текст </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом тексте </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2cbe7ebd81a6e2cd23a5bf7f432d6592" name="a2cbe7ebd81a6e2cd23a5bf7f432d6592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbe7ebd81a6e2cd23a5bf7f432d6592">&#9670;&nbsp;</a></span>encrypt() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2cbe7ebd81a6e2cd23a5bf7f432d6592" name="a2cbe7ebd81a6e2cd23a5bf7f432d6592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbe7ebd81a6e2cd23a5bf7f432d6592">&#9670;&nbsp;</a></span>encrypt() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Шифрование текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Текст для шифрования </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Зашифрованный текст </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом тексте </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a46a9615b88620de102ba9df4ac070139" name="a46a9615b88620de102ba9df4ac070139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a9615b88620de102ba9df4ac070139">&#9670;&nbsp;</a></span>getValidCipherText() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::getValidCipherText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46a9615b88620de102ba9df4ac070139" name="a46a9615b88620de102ba9df4ac070139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a9615b88620de102ba9df4ac070139">&#9670;&nbsp;</a></span>getValidCipherText() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::getValidCipherText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидация зашифрованного текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Зашифрованный текст </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Валидированный текст </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом тексте </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa954b567d7cafbce24372f6ee97f2686" name="aa954b567d7cafbce24372f6ee97f2686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa954b567d7cafbce24372f6ee97f2686">&#9670;&nbsp;</a></span>getValidOpenText() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::getValidOpenText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa954b567d7cafbce24372f6ee97f2686" name="aa954b567d7cafbce24372f6ee97f2686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa954b567d7cafbce24372f6ee97f2686">&#9670;&nbsp;</a></span>getValidOpenText() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::getValidOpenText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидация открытого текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Открытый текст </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Валидированный текст </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом тексте </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2effacca00f88e821b89c1a3c904aa71" name="a2effacca00f88e821b89c1a3c904aa71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2effacca00f88e821b89c1a3c904aa71">&#9670;&nbsp;</a></span>prepareText() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::prepareText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2effacca00f88e821b89c1a3c904aa71" name="a2effacca00f88e821b89c1a3c904aa71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2effacca00f88e821b89c1a3c904aa71">&#9670;&nbsp;</a></span>prepareText() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::prepareText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Подготовка текста к обработке </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Исходный текст </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Текст без пробелов в верхнем регистре</dd></dl>
+<p>Удаляет пробелы и приводит все буквы к верхнему регистру </p>
+
+</div>
+</div>
+<a id="a20d3390422d4b129ab563e0032e80b82" name="a20d3390422d4b129ab563e0032e80b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d3390422d4b129ab563e0032e80b82">&#9670;&nbsp;</a></span>readDecrypted() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::readDecrypted </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20d3390422d4b129ab563e0032e80b82" name="a20d3390422d4b129ab563e0032e80b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d3390422d4b129ab563e0032e80b82">&#9670;&nbsp;</a></span>readDecrypted() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::readDecrypted </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение таблицы в режиме расшифрования </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">table</td><td>Таблица символов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Расшифрованная строка</dd></dl>
+<p>Читает таблицу построчно слева направо </p>
+
+</div>
+</div>
+<a id="ac0faf22e466cb4e3efcaa3d54cc0281f" name="ac0faf22e466cb4e3efcaa3d54cc0281f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0faf22e466cb4e3efcaa3d54cc0281f">&#9670;&nbsp;</a></span>readEncrypted() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::readEncrypted </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0faf22e466cb4e3efcaa3d54cc0281f" name="ac0faf22e466cb4e3efcaa3d54cc0281f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0faf22e466cb4e3efcaa3d54cc0281f">&#9670;&nbsp;</a></span>readEncrypted() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring routeCipher::readEncrypted </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; wchar_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение таблицы в режиме шифрования </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">table</td><td>Таблица символов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Зашифрованная строка</dd></dl>
+<p>Читает таблицу по столбцам справа налево снизу вверх </p>
+
+</div>
+</div>
+<a id="a93e4bad1a4be455654e18f02726734b7" name="a93e4bad1a4be455654e18f02726734b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e4bad1a4be455654e18f02726734b7">&#9670;&nbsp;</a></span>validateColumns() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void routeCipher::validateColumns </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидация количества столбцов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов для проверки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом количестве столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a93e4bad1a4be455654e18f02726734b7" name="a93e4bad1a4be455654e18f02726734b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e4bad1a4be455654e18f02726734b7">&#9670;&nbsp;</a></span>validateColumns() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void routeCipher::validateColumns </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидация количества столбцов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>Количество столбцов для проверки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classroute__cipher__error.html" title="Класс для обработки ошибок маршрутного шифрования">route_cipher_error</a></td><td>При недопустимом количестве столбцов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="ad89026145f29bbc8458bb64c5c46181d" name="ad89026145f29bbc8458bb64c5c46181d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad89026145f29bbc8458bb64c5c46181d">&#9670;&nbsp;</a></span>columns</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int routeCipher::columns</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество столбцов в таблице </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>lab-3/task1/<a class="el" href="modAlphaCipher_8h_source.html">modAlphaCipher.h</a></li>
+<li>lab-3/task2/<a class="el" href="routeCipher_8h_source.html">routeCipher.h</a></li>
+<li>lab-3/task2/<a class="el" href="routeCipher_8cpp.html">routeCipher.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

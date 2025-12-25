@@ -1,0 +1,50 @@
+\hypertarget{routeCipher_8h_source}{}\doxysection{route\+Cipher.\+h}
+\label{routeCipher_8h_source}\index{lab-\/3/task2/routeCipher.h@{lab-\/3/task2/routeCipher.h}}
+\mbox{\hyperlink{routeCipher_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}} : \textcolor{keyword}{public} std::invalid\_argument \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33     \textcolor{keyword}{explicit} \mbox{\hyperlink{classroute__cipher__error_a5248a94b6e6828329427b5ec482be47e}{route\_cipher\_error}}(\textcolor{keyword}{const} std::string\& what\_arg) :}
+\DoxyCodeLine{34         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{35     }
+\DoxyCodeLine{40     \textcolor{keyword}{explicit} \mbox{\hyperlink{classroute__cipher__error_a5d966ccc1f4624d4772024b1187f9ae0}{route\_cipher\_error}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* what\_arg) :}
+\DoxyCodeLine{41         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{74 \textcolor{keyword}{class }\mbox{\hyperlink{classrouteCipher}{routeCipher}} \{}
+\DoxyCodeLine{75 \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}}; }
+\DoxyCodeLine{77     }
+\DoxyCodeLine{84     std::wstring \mbox{\hyperlink{classrouteCipher_a2effacca00f88e821b89c1a3c904aa71}{prepareText}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{93     std::vector<std::vector<wchar\_t>> \mbox{\hyperlink{classrouteCipher_a3844986b300f348310733db4c28b70ee}{createTable}}(\textcolor{keyword}{const} std::wstring\& text, \textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{94     }
+\DoxyCodeLine{102     std::wstring \mbox{\hyperlink{classrouteCipher_ac0faf22e466cb4e3efcaa3d54cc0281f}{readEncrypted}}(\textcolor{keyword}{const} std::vector<std::vector<wchar\_t>>\& table, \textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{103     }
+\DoxyCodeLine{111     std::wstring \mbox{\hyperlink{classrouteCipher_a20d3390422d4b129ab563e0032e80b82}{readDecrypted}}(\textcolor{keyword}{const} std::vector<std::vector<wchar\_t>>\& table, \textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrouteCipher_a93e4bad1a4be455654e18f02726734b7}{validateColumns}}(\textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{119     }
+\DoxyCodeLine{126     std::wstring \mbox{\hyperlink{classrouteCipher_aa954b567d7cafbce24372f6ee97f2686}{getValidOpenText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{127     }
+\DoxyCodeLine{134     std::wstring \mbox{\hyperlink{classrouteCipher_a46a9615b88620de102ba9df4ac070139}{getValidCipherText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{keyword}{public}:}
+\DoxyCodeLine{140     \mbox{\hyperlink{classrouteCipher_ac0d686aa3a9f9ca950809b79741e7d2b}{routeCipher}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{141     }
+\DoxyCodeLine{147     \mbox{\hyperlink{classrouteCipher_aa3f810f10c694deac13302d59a5d788d}{routeCipher}}(\textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{148     }
+\DoxyCodeLine{155     std::wstring \mbox{\hyperlink{classrouteCipher_a2cbe7ebd81a6e2cd23a5bf7f432d6592}{encrypt}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{156     }
+\DoxyCodeLine{163     std::wstring \mbox{\hyperlink{classrouteCipher_a3a783275fd59cac6bf4904568111778a}{decrypt}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{164 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,400 @@
+\hypertarget{modAlphaCipher_8h_source}{}\doxysection{mod\+Alpha\+Cipher.\+h}
+\label{modAlphaCipher_8h_source}\index{lab-\/3/task1/modAlphaCipher.h@{lab-\/3/task1/modAlphaCipher.h}}
+\mbox{\hyperlink{modAlphaCipher_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \mbox{\hyperlink{modAlphaCipher_8h_a0ecaff72845729b9d2fd7f4bd6b2155c}{смотри}}, у меня в 3 лабе было 2 задания и они в разных папках и при этом не было ни каких \mbox{\hyperlink{task1_2test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} }
+\DoxyCodeLine{2 ВОТ}
+\DoxyCodeLine{3 \mbox{\hyperlink{modAlphaCipher_8h_a0ecd5c80f5a0a0a358594f381b1f8729}{task1}}:}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \mbox{\hyperlink{classmodAlphaCipher}{modAlphaCipher}}.cpp:}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{modAlphaCipher_8h}{modAlphaCipher.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// Конструктор}}
+\DoxyCodeLine{20 \mbox{\hyperlink{classmodAlphaCipher_a4f0a86c20f5d836f66cb1e640d875e6b}{modAlphaCipher::modAlphaCipher}}(\textcolor{keyword}{const} wstring\& skey) \{}
+\DoxyCodeLine{21     \textcolor{comment}{// Инициализация ассоциативного массива alphaNum}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}}.size(); i++) \{}
+\DoxyCodeLine{23         \mbox{\hyperlink{classmodAlphaCipher_ad896cbfa7d4c32d1c9627b0812b4a677}{alphaNum}}[\mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}}[i]] = i;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{comment}{// Валидация и преобразование ключа}}
+\DoxyCodeLine{26     \mbox{\hyperlink{classmodAlphaCipher_aaddfb3bc0a3806b17e94c56fea5bad87}{key}} = \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{convert}}(\mbox{\hyperlink{classmodAlphaCipher_a5205f56abb57d77730d571b38af4589c}{getValidKey}}(skey));}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{// Преобразование строки в вектор}}
+\DoxyCodeLine{30 vector<int> \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{modAlphaCipher::convert}}(\textcolor{keyword}{const} wstring\& s) \{}
+\DoxyCodeLine{31     vector<int> result;}
+\DoxyCodeLine{32     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c : s) \{}
+\DoxyCodeLine{33         result.push\_back(\mbox{\hyperlink{classmodAlphaCipher_ad896cbfa7d4c32d1c9627b0812b4a677}{alphaNum}}[c]);}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{36 \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{// Преобразование вектора в строку}}
+\DoxyCodeLine{39 wstring \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{modAlphaCipher::convert}}(\textcolor{keyword}{const} vector<int>\& v) \{}
+\DoxyCodeLine{40     wstring result;}
+\DoxyCodeLine{41     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : v) \{}
+\DoxyCodeLine{42         result.push\_back(\mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}}[i]);}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{45 \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{// Валидация ключа}}
+\DoxyCodeLine{48 wstring \mbox{\hyperlink{classmodAlphaCipher_a5205f56abb57d77730d571b38af4589c}{modAlphaCipher::getValidKey}}(\textcolor{keyword}{const} wstring\& s) \{}
+\DoxyCodeLine{49     \textcolor{keywordflow}{if} (s.empty()) \{}
+\DoxyCodeLine{50         \textcolor{keywordflow}{throw} cipher\_error(\textcolor{stringliteral}{"{}Пустой ключ"{}});}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{53     wstring tmp(s);}
+\DoxyCodeLine{54     \textcolor{comment}{// Проверка на не-\/буквы и перевод в верхний регистр}}
+\DoxyCodeLine{55     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& c : tmp) \{}
+\DoxyCodeLine{56         \textcolor{keywordflow}{if} (!isalpha(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}}))) \{}
+\DoxyCodeLine{57             wstring\_convert<codecvt\_utf8<wchar\_t>> converter;}
+\DoxyCodeLine{58             \textcolor{keywordflow}{throw} cipher\_error(\textcolor{stringliteral}{"{}Недопустимый символ в ключе: "{}} + converter.to\_bytes(wstring(1, c)));}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60         \textcolor{keywordflow}{if} (islower(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}}))) \{}
+\DoxyCodeLine{61             c = toupper(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}}));}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65     \textcolor{comment}{// Проверка на вырожденный ключ (все символы одинаковы)}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool} allSame = \textcolor{keyword}{true};}
+\DoxyCodeLine{67     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 1; i < tmp.size(); i++) \{}
+\DoxyCodeLine{68         \textcolor{keywordflow}{if} (tmp[i] != tmp[0]) \{}
+\DoxyCodeLine{69             allSame = \textcolor{keyword}{false};}
+\DoxyCodeLine{70             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73     \textcolor{keywordflow}{if} (allSame) \{}
+\DoxyCodeLine{74         \textcolor{keywordflow}{throw} cipher\_error(\textcolor{stringliteral}{"{}Вырожденный ключ (все символы одинаковы)"{}});}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{77     \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{78 \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{// Валидация открытого текста}}
+\DoxyCodeLine{81 wstring \mbox{\hyperlink{classmodAlphaCipher_a44a98fdee10259bdcca33fcc4fe59e1d}{modAlphaCipher::getValidOpenText}}(\textcolor{keyword}{const} wstring\& s) \{}
+\DoxyCodeLine{82     wstring tmp;}
+\DoxyCodeLine{83     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c : s) \{}
+\DoxyCodeLine{84         \textcolor{keywordflow}{if} (isalpha(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}}))) \{}
+\DoxyCodeLine{85             \textcolor{keywordflow}{if} (islower(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}}))) \{}
+\DoxyCodeLine{86                 tmp.push\_back(toupper(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}})));}
+\DoxyCodeLine{87             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{88                 tmp.push\_back(c);}
+\DoxyCodeLine{89             \}}
+\DoxyCodeLine{90         \}}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92     }
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} (tmp.empty()) \{}
+\DoxyCodeLine{94         \textcolor{keywordflow}{throw} cipher\_error(\textcolor{stringliteral}{"{}Пустой открытый текст после очистки"{}});}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{98 \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{// Валидация зашифрованного текста}}
+\DoxyCodeLine{101 wstring \mbox{\hyperlink{classmodAlphaCipher_a262f20c96ba0c57108afaf970e34e34f}{modAlphaCipher::getValidCipherText}}(\textcolor{keyword}{const} wstring\& s) \{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if} (s.empty()) \{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{throw} cipher\_error(\textcolor{stringliteral}{"{}Пустой зашифрованный текст"{}});}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105     }
+\DoxyCodeLine{106     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c : s) \{}
+\DoxyCodeLine{107         \textcolor{keywordflow}{if} (!isalpha(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}})) || islower(c, locale(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}}))) \{}
+\DoxyCodeLine{108             wstring\_convert<codecvt\_utf8<wchar\_t>> converter;}
+\DoxyCodeLine{109             \textcolor{keywordflow}{throw} cipher\_error(\textcolor{stringliteral}{"{}Недопустимый символ в зашифрованном тексте: "{}} + converter.to\_bytes(wstring(1, c)));}
+\DoxyCodeLine{110         \}}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{114 \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{comment}{// Шифрование}}
+\DoxyCodeLine{117 wstring \mbox{\hyperlink{classmodAlphaCipher_a4338c0b391e77b6a57c0421472b7aa64}{modAlphaCipher::encrypt}}(\textcolor{keyword}{const} wstring\& open\_text) \{}
+\DoxyCodeLine{118     wstring valid\_text = \mbox{\hyperlink{classmodAlphaCipher_a44a98fdee10259bdcca33fcc4fe59e1d}{getValidOpenText}}(open\_text);}
+\DoxyCodeLine{119     vector<int> work = \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{convert}}(valid\_text);}
+\DoxyCodeLine{120     }
+\DoxyCodeLine{121     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < work.size(); i++) \{}
+\DoxyCodeLine{122         work[i] = (work[i] + \mbox{\hyperlink{classmodAlphaCipher_aaddfb3bc0a3806b17e94c56fea5bad87}{key}}[i \% \mbox{\hyperlink{classmodAlphaCipher_aaddfb3bc0a3806b17e94c56fea5bad87}{key}}.size()]) \% \mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}}.size();}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124     }
+\DoxyCodeLine{125     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{convert}}(work);}
+\DoxyCodeLine{126 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{comment}{// Расшифрование}}
+\DoxyCodeLine{129 wstring \mbox{\hyperlink{classmodAlphaCipher_a4a206dd7152e19d90812966fe9ff7139}{modAlphaCipher::decrypt}}(\textcolor{keyword}{const} wstring\& cipher\_text) \{}
+\DoxyCodeLine{130     wstring valid\_text = \mbox{\hyperlink{classmodAlphaCipher_a262f20c96ba0c57108afaf970e34e34f}{getValidCipherText}}(cipher\_text);}
+\DoxyCodeLine{131     vector<int> work = \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{convert}}(valid\_text);}
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < work.size(); i++) \{}
+\DoxyCodeLine{134         work[i] = (work[i] + \mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}}.size() -\/ \mbox{\hyperlink{classmodAlphaCipher_aaddfb3bc0a3806b17e94c56fea5bad87}{key}}[i \% \mbox{\hyperlink{classmodAlphaCipher_aaddfb3bc0a3806b17e94c56fea5bad87}{key}}.size()]) \% \mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}}.size();}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     }
+\DoxyCodeLine{137     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{convert}}(work);}
+\DoxyCodeLine{138 \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \mbox{\hyperlink{classmodAlphaCipher}{modAlphaCipher}}.h:}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#include <codecvt>}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{167 \textcolor{keyword}{class }cipher\_error: \textcolor{keyword}{public} std::invalid\_argument \{}
+\DoxyCodeLine{168 \textcolor{keyword}{public}:}
+\DoxyCodeLine{173     \textcolor{keyword}{explicit} cipher\_error (\textcolor{keyword}{const} std::string\& what\_arg):}
+\DoxyCodeLine{174         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{180     \textcolor{keyword}{explicit} cipher\_error (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* what\_arg):}
+\DoxyCodeLine{181         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{182 \};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{199 \textcolor{keyword}{class }\mbox{\hyperlink{classmodAlphaCipher}{modAlphaCipher}} \{}
+\DoxyCodeLine{200 \textcolor{keyword}{private}:}
+\DoxyCodeLine{201     std::wstring \mbox{\hyperlink{classmodAlphaCipher_ab7e0c7d3c87f4c8b7435d84f31c6cb62}{numAlpha}} = L\textcolor{stringliteral}{"{}АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"{}}; }
+\DoxyCodeLine{202     std::map <wchar\_t,int> \mbox{\hyperlink{classmodAlphaCipher_ad896cbfa7d4c32d1c9627b0812b4a677}{alphaNum}}; }
+\DoxyCodeLine{203     std::vector <int> \mbox{\hyperlink{classmodAlphaCipher_aaddfb3bc0a3806b17e94c56fea5bad87}{key}}; }
+\DoxyCodeLine{204     }
+\DoxyCodeLine{211     std::vector<int> \mbox{\hyperlink{classmodAlphaCipher_a12ace58352c18bac7a7b61f312a4c8d6}{convert}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{212     }
+\DoxyCodeLine{219     std::wstring \mbox{\hyperlink{classmodAlphaCipher_ac86303da1bf6467d3afd928a0e781f97}{convert}}(\textcolor{keyword}{const} std::vector<int>\& v);}
+\DoxyCodeLine{220     }
+\DoxyCodeLine{230     std::wstring \mbox{\hyperlink{classmodAlphaCipher_a5205f56abb57d77730d571b38af4589c}{getValidKey}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{231     }
+\DoxyCodeLine{239     std::wstring \mbox{\hyperlink{classmodAlphaCipher_a44a98fdee10259bdcca33fcc4fe59e1d}{getValidOpenText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{240     }
+\DoxyCodeLine{250     std::wstring \mbox{\hyperlink{classmodAlphaCipher_a262f20c96ba0c57108afaf970e34e34f}{getValidCipherText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{keyword}{public}:}
+\DoxyCodeLine{253     \mbox{\hyperlink{classmodAlphaCipher_a4f0a86c20f5d836f66cb1e640d875e6b}{modAlphaCipher}}() = \textcolor{keyword}{delete}; }
+\DoxyCodeLine{254     }
+\DoxyCodeLine{265     \mbox{\hyperlink{classmodAlphaCipher_a314fca132f4e74faca280b7c1fad7cb5}{modAlphaCipher}}(\textcolor{keyword}{const} std::wstring\& skey);}
+\DoxyCodeLine{266     }
+\DoxyCodeLine{279     std::wstring \mbox{\hyperlink{classmodAlphaCipher_a4338c0b391e77b6a57c0421472b7aa64}{encrypt}}(\textcolor{keyword}{const} std::wstring\& open\_text);}
+\DoxyCodeLine{280     }
+\DoxyCodeLine{293     std::wstring \mbox{\hyperlink{classmodAlphaCipher_a4a206dd7152e19d90812966fe9ff7139}{decrypt}}(\textcolor{keyword}{const} std::wstring\& cipher\_text);}
+\DoxyCodeLine{294 \};}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 \mbox{\hyperlink{classrouteCipher}{routeCipher}}.cpp:}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{routeCipher_8h}{routeCipher.h}}"{}}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#include <cctype>}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#include <cwctype>}}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \mbox{\hyperlink{classrouteCipher_ac0d686aa3a9f9ca950809b79741e7d2b}{routeCipher::routeCipher}}(\textcolor{keywordtype}{int} cols)}
+\DoxyCodeLine{305 \{}
+\DoxyCodeLine{306     \mbox{\hyperlink{classrouteCipher_a93e4bad1a4be455654e18f02726734b7}{validateColumns}}(cols);}
+\DoxyCodeLine{307     \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}} = cols;}
+\DoxyCodeLine{308 \}}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{comment}{// Валидация количества столбцов}}
+\DoxyCodeLine{311 \textcolor{keywordtype}{void} \mbox{\hyperlink{classrouteCipher_a93e4bad1a4be455654e18f02726734b7}{routeCipher::validateColumns}}(\textcolor{keywordtype}{int} cols)}
+\DoxyCodeLine{312 \{}
+\DoxyCodeLine{313     \textcolor{keywordflow}{if} (cols <= 0) \{}
+\DoxyCodeLine{314         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Number of columns must be positive"{}});}
+\DoxyCodeLine{315     \}}
+\DoxyCodeLine{316     \textcolor{keywordflow}{if} (cols > 100) \{ \textcolor{comment}{// Реалистичное ограничение}}
+\DoxyCodeLine{317         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Number of columns is too large"{}});}
+\DoxyCodeLine{318     \}}
+\DoxyCodeLine{319 \}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{comment}{// Валидация открытого текста}}
+\DoxyCodeLine{322 std::wstring \mbox{\hyperlink{classrouteCipher_aa954b567d7cafbce24372f6ee97f2686}{routeCipher::getValidOpenText}}(\textcolor{keyword}{const} std::wstring\& s)}
+\DoxyCodeLine{323 \{}
+\DoxyCodeLine{324     \textcolor{keywordflow}{if} (s.empty()) \{}
+\DoxyCodeLine{325         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Empty open text"{}});}
+\DoxyCodeLine{326     \}}
+\DoxyCodeLine{327     }
+\DoxyCodeLine{328     std::wstring result;}
+\DoxyCodeLine{329     std::locale loc(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}});}
+\DoxyCodeLine{330     }
+\DoxyCodeLine{331     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{wchar\_t} c : s) \{}
+\DoxyCodeLine{332         \textcolor{keywordflow}{if} (isalpha(c, loc) || c == L\textcolor{charliteral}{' '}) \{}
+\DoxyCodeLine{333             \textcolor{keywordflow}{if} (isalpha(c, loc)) \{}
+\DoxyCodeLine{334                 c = toupper(c, loc);}
+\DoxyCodeLine{335             \}}
+\DoxyCodeLine{336             result += c;}
+\DoxyCodeLine{337         \}}
+\DoxyCodeLine{338         \textcolor{comment}{// Игнорируем другие символы (цифры, знаки препинания)}}
+\DoxyCodeLine{339     \}}
+\DoxyCodeLine{340     }
+\DoxyCodeLine{341     \textcolor{comment}{// Удаляем пробелы для шифрования}}
+\DoxyCodeLine{342     std::wstring textWithoutSpaces;}
+\DoxyCodeLine{343     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{wchar\_t} c : result) \{}
+\DoxyCodeLine{344         \textcolor{keywordflow}{if} (c != L\textcolor{charliteral}{' '}) \{}
+\DoxyCodeLine{345             textWithoutSpaces += c;}
+\DoxyCodeLine{346         \}}
+\DoxyCodeLine{347     \}}
+\DoxyCodeLine{348     }
+\DoxyCodeLine{349     \textcolor{keywordflow}{if} (textWithoutSpaces.empty()) \{}
+\DoxyCodeLine{350         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Open text contains no valid letters"{}});}
+\DoxyCodeLine{351     \}}
+\DoxyCodeLine{352     }
+\DoxyCodeLine{353     \textcolor{keywordflow}{return} textWithoutSpaces;}
+\DoxyCodeLine{354 \}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{comment}{// Валидация зашифрованного текста}}
+\DoxyCodeLine{357 std::wstring \mbox{\hyperlink{classrouteCipher_a46a9615b88620de102ba9df4ac070139}{routeCipher::getValidCipherText}}(\textcolor{keyword}{const} std::wstring\& s)}
+\DoxyCodeLine{358 \{}
+\DoxyCodeLine{359     \textcolor{keywordflow}{if} (s.empty()) \{}
+\DoxyCodeLine{360         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Empty cipher text"{}});}
+\DoxyCodeLine{361     \}}
+\DoxyCodeLine{362     }
+\DoxyCodeLine{363     std::locale loc(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}});}
+\DoxyCodeLine{364     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{wchar\_t} c : s) \{}
+\DoxyCodeLine{365         \textcolor{keywordflow}{if} (!isalpha(c, loc)) \{}
+\DoxyCodeLine{366             \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Cipher text must contain only letters"{}});}
+\DoxyCodeLine{367         \}}
+\DoxyCodeLine{368         \textcolor{keywordflow}{if} (!isupper(c, loc)) \{}
+\DoxyCodeLine{369             \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Cipher text must be in uppercase"{}});}
+\DoxyCodeLine{370         \}}
+\DoxyCodeLine{371     \}}
+\DoxyCodeLine{372     }
+\DoxyCodeLine{373     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{374 \}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 std::wstring \mbox{\hyperlink{classrouteCipher_a2effacca00f88e821b89c1a3c904aa71}{routeCipher::prepareText}}(\textcolor{keyword}{const} std::wstring\& text)}
+\DoxyCodeLine{377 \{}
+\DoxyCodeLine{378     std::wstring result;}
+\DoxyCodeLine{379     std::locale loc(\textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}});}
+\DoxyCodeLine{380     }
+\DoxyCodeLine{381     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{wchar\_t} c : text) \{}
+\DoxyCodeLine{382         \textcolor{keywordflow}{if} (c != L\textcolor{charliteral}{' '}) \{}
+\DoxyCodeLine{383             c = toupper(c, loc);}
+\DoxyCodeLine{384             result += c;}
+\DoxyCodeLine{385         \}}
+\DoxyCodeLine{386     \}}
+\DoxyCodeLine{387     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{388 \}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 std::vector<std::vector<wchar\_t>> \mbox{\hyperlink{classrouteCipher_a3844986b300f348310733db4c28b70ee}{routeCipher::createTable}}(\textcolor{keyword}{const} std::wstring\& text, \textcolor{keywordtype}{int} cols)}
+\DoxyCodeLine{391 \{}
+\DoxyCodeLine{392     \textcolor{keywordtype}{int} length = text.length();}
+\DoxyCodeLine{393     \textcolor{keywordtype}{int} rows = (length + cols -\/ 1) / cols;}
+\DoxyCodeLine{394     std::vector<std::vector<wchar\_t>> table(rows, std::vector<wchar\_t>(cols, L\textcolor{charliteral}{' '}));}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396     \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{397     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; i++) \{}
+\DoxyCodeLine{398         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < cols; j++) \{}
+\DoxyCodeLine{399             \textcolor{keywordflow}{if} (index < length) \{}
+\DoxyCodeLine{400                 table[i][j] = text[index++];}
+\DoxyCodeLine{401             \}}
+\DoxyCodeLine{402         \}}
+\DoxyCodeLine{403     \}}
+\DoxyCodeLine{404     \textcolor{keywordflow}{return} table;}
+\DoxyCodeLine{405 \}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 std::wstring \mbox{\hyperlink{classrouteCipher_ac0faf22e466cb4e3efcaa3d54cc0281f}{routeCipher::readEncrypted}}(\textcolor{keyword}{const} std::vector<std::vector<wchar\_t>>\& table, \textcolor{keywordtype}{int} cols)}
+\DoxyCodeLine{408 \{}
+\DoxyCodeLine{409     \textcolor{keywordtype}{int} rows = table.size();}
+\DoxyCodeLine{410     std::wstring result;}
+\DoxyCodeLine{411     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = cols -\/ 1; j >= 0; j-\/-\/) \{}
+\DoxyCodeLine{412         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; i++) \{}
+\DoxyCodeLine{413             \textcolor{keywordflow}{if} (table[i][j] != L\textcolor{charliteral}{' '}) \{}
+\DoxyCodeLine{414                 result += table[i][j];}
+\DoxyCodeLine{415             \}}
+\DoxyCodeLine{416         \}}
+\DoxyCodeLine{417     \}}
+\DoxyCodeLine{418     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{419 \}}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421 std::wstring \mbox{\hyperlink{classrouteCipher_a20d3390422d4b129ab563e0032e80b82}{routeCipher::readDecrypted}}(\textcolor{keyword}{const} std::vector<std::vector<wchar\_t>>\& table, \textcolor{keywordtype}{int} cols)}
+\DoxyCodeLine{422 \{}
+\DoxyCodeLine{423     \textcolor{keywordtype}{int} rows = table.size();}
+\DoxyCodeLine{424     std::wstring result;}
+\DoxyCodeLine{425     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; i++) \{}
+\DoxyCodeLine{426         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < cols; j++) \{}
+\DoxyCodeLine{427             \textcolor{keywordflow}{if} (table[i][j] != L\textcolor{charliteral}{' '}) \{}
+\DoxyCodeLine{428                 result += table[i][j];}
+\DoxyCodeLine{429             \}}
+\DoxyCodeLine{430         \}}
+\DoxyCodeLine{431     \}}
+\DoxyCodeLine{432     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{433 \}}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 std::wstring \mbox{\hyperlink{classrouteCipher_a2cbe7ebd81a6e2cd23a5bf7f432d6592}{routeCipher::encrypt}}(\textcolor{keyword}{const} std::wstring\& text)}
+\DoxyCodeLine{436 \{}
+\DoxyCodeLine{437     std::wstring prepared = \mbox{\hyperlink{classrouteCipher_aa954b567d7cafbce24372f6ee97f2686}{getValidOpenText}}(text);}
+\DoxyCodeLine{438     \textcolor{keyword}{auto} table = \mbox{\hyperlink{classrouteCipher_a3844986b300f348310733db4c28b70ee}{createTable}}(prepared, \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}});}
+\DoxyCodeLine{439     \textcolor{keywordflow}{return} \mbox{\hyperlink{classrouteCipher_ac0faf22e466cb4e3efcaa3d54cc0281f}{readEncrypted}}(table, \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}});}
+\DoxyCodeLine{440 \}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 std::wstring \mbox{\hyperlink{classrouteCipher_a3a783275fd59cac6bf4904568111778a}{routeCipher::decrypt}}(\textcolor{keyword}{const} std::wstring\& text)}
+\DoxyCodeLine{443 \{}
+\DoxyCodeLine{444     std::wstring prepared = \mbox{\hyperlink{classrouteCipher_a46a9615b88620de102ba9df4ac070139}{getValidCipherText}}(text);}
+\DoxyCodeLine{445     \textcolor{keywordtype}{int} length = prepared.length();}
+\DoxyCodeLine{446     }
+\DoxyCodeLine{447     \textcolor{keywordflow}{if} (length == 0) \{}
+\DoxyCodeLine{448         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}}(\textcolor{stringliteral}{"{}Cipher text is empty after validation"{}});}
+\DoxyCodeLine{449     \}}
+\DoxyCodeLine{450     }
+\DoxyCodeLine{451     \textcolor{keywordtype}{int} rows = (length + \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}} -\/ 1) / \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}};}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453     \textcolor{keywordtype}{int} extras = length \% \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}};}
+\DoxyCodeLine{454     std::vector<int> heights(\mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}}, rows);}
+\DoxyCodeLine{455     \textcolor{keywordflow}{if} (extras != 0) \{}
+\DoxyCodeLine{456         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}}; ++j) \{}
+\DoxyCodeLine{457             heights[j] = (j < extras) ? rows : (rows -\/ 1);}
+\DoxyCodeLine{458         \}}
+\DoxyCodeLine{459     \}}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461     std::vector<std::vector<wchar\_t>> table(rows, std::vector<wchar\_t>(\mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}}, L\textcolor{charliteral}{' '}));}
+\DoxyCodeLine{462     \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}} -\/ 1; j >= 0; j-\/-\/) \{}
+\DoxyCodeLine{465         \textcolor{keywordtype}{int} \mbox{\hyperlink{modAlphaCipher_8h_ad7b6d2b66417fe546f2998285c2e73d4}{h}} = heights[j];}
+\DoxyCodeLine{466         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{modAlphaCipher_8h_ad7b6d2b66417fe546f2998285c2e73d4}{h}}; i++) \{}
+\DoxyCodeLine{467             \textcolor{keywordflow}{if} (index < length) \{}
+\DoxyCodeLine{468                 table[i][j] = prepared[index++];}
+\DoxyCodeLine{469             \}}
+\DoxyCodeLine{470         \}}
+\DoxyCodeLine{471     \}}
+\DoxyCodeLine{472     \textcolor{keywordflow}{return} \mbox{\hyperlink{classrouteCipher_a20d3390422d4b129ab563e0032e80b82}{readDecrypted}}(table, \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}});}
+\DoxyCodeLine{473 \}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \mbox{\hyperlink{classrouteCipher}{routeCipher}}.h:}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 \textcolor{keyword}{class }\mbox{\hyperlink{classroute__cipher__error}{route\_cipher\_error}} : \textcolor{keyword}{public} std::invalid\_argument \{}
+\DoxyCodeLine{485 \textcolor{keyword}{public}:}
+\DoxyCodeLine{486     \textcolor{keyword}{explicit} \mbox{\hyperlink{classroute__cipher__error_a5248a94b6e6828329427b5ec482be47e}{route\_cipher\_error}}(\textcolor{keyword}{const} std::string\& what\_arg) :}
+\DoxyCodeLine{487         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{488     \textcolor{keyword}{explicit} \mbox{\hyperlink{classroute__cipher__error_a5248a94b6e6828329427b5ec482be47e}{route\_cipher\_error}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* what\_arg) :}
+\DoxyCodeLine{489         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{490 \};}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492 \textcolor{keyword}{class }\mbox{\hyperlink{classrouteCipher}{routeCipher}}}
+\DoxyCodeLine{493 \{}
+\DoxyCodeLine{494 \textcolor{keyword}{private}:}
+\DoxyCodeLine{495     \textcolor{keywordtype}{int} \mbox{\hyperlink{classrouteCipher_ad89026145f29bbc8458bb64c5c46181d}{columns}};}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497     std::wstring \mbox{\hyperlink{classrouteCipher_a2effacca00f88e821b89c1a3c904aa71}{prepareText}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{498     std::vector<std::vector<wchar\_t>> \mbox{\hyperlink{classrouteCipher_a3844986b300f348310733db4c28b70ee}{createTable}}(\textcolor{keyword}{const} std::wstring\& text, \textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{499     std::wstring \mbox{\hyperlink{classrouteCipher_ac0faf22e466cb4e3efcaa3d54cc0281f}{readEncrypted}}(\textcolor{keyword}{const} std::vector<std::vector<wchar\_t>>\& table, \textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{500     std::wstring \mbox{\hyperlink{classrouteCipher_a20d3390422d4b129ab563e0032e80b82}{readDecrypted}}(\textcolor{keyword}{const} std::vector<std::vector<wchar\_t>>\& table, \textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{501     }
+\DoxyCodeLine{502     \textcolor{comment}{// Методы валидации}}
+\DoxyCodeLine{503     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrouteCipher_a93e4bad1a4be455654e18f02726734b7}{validateColumns}}(\textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{504     std::wstring \mbox{\hyperlink{classrouteCipher_aa954b567d7cafbce24372f6ee97f2686}{getValidOpenText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{505     std::wstring \mbox{\hyperlink{classrouteCipher_a46a9615b88620de102ba9df4ac070139}{getValidCipherText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507 \textcolor{keyword}{public}:}
+\DoxyCodeLine{508     \mbox{\hyperlink{classrouteCipher_ac0d686aa3a9f9ca950809b79741e7d2b}{routeCipher}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{509     \mbox{\hyperlink{classrouteCipher_ac0d686aa3a9f9ca950809b79741e7d2b}{routeCipher}}(\textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511     std::wstring \mbox{\hyperlink{classrouteCipher_a2cbe7ebd81a6e2cd23a5bf7f432d6592}{encrypt}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{512     std::wstring \mbox{\hyperlink{classrouteCipher_a3a783275fd59cac6bf4904568111778a}{decrypt}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{513 \};}
+
+\end{DoxyCode}
